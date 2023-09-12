@@ -5,14 +5,12 @@ import { galleryItems } from "./gallery-items.js";
 
 const listEl = document.querySelector(".gallery");
 listEl.insertAdjacentHTML("beforeend", createMarkup(galleryItems));
-listEl.addEventListener("click", hadleClick);
 
 function createMarkup(element) {
   return element
-
     .map(
       ({ preview, original, description }) => `
-      
+
   <li class="gallery__item">
    <a class="gallery-link" href="${original}">
  <img
@@ -30,8 +28,8 @@ function hadleClick(event) {
   if (event.target === event.currentTarget) {
     return;
   }
-  const lightbox = new SimpleLightbox(".gallery a", {
-    captionsData: "alt",
-    captionDelay: 250,
-  });
 }
+const lightbox = new SimpleLightbox(".gallery a", {
+  captionsData: "alt",
+  captionDelay: 250,
+});
